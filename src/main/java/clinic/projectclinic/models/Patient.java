@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -24,9 +25,7 @@ public class Patient {
     private String password;
     @ManyToOne
     private Doctor doctor;
-    @OneToOne
-    private Card card;
-    @ManyToOne
-    private Notification notification;
+        
+
 
 }
