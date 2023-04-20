@@ -4,27 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "doctor")
-public class Doctor {
+@Table(name = "login")
+
+public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    private  String name;
-    private  String address;
-    private  String email;
-    private  String PhoneNo;
+    private String username;
+    private  String password;
+    private  String role;
     @ManyToOne
-    private  Role role;
-   @ManyToOne
-    private Patient patient;
-
+    private Doctor doctor;
 }

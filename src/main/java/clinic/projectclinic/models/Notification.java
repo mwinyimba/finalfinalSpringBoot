@@ -18,4 +18,7 @@ public class Notification {
     private Long id;
     private String type;
     private String message;
+    @ManyToOne
+    private Patient patient;
+
 }

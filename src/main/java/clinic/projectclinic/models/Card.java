@@ -20,4 +20,6 @@ public class Card {
     private String place;
     private LocalDate date;
     private String phone_No;
+    @OneToOne
+    private Patient patient;
 }
