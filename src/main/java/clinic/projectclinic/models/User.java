@@ -4,27 +4,25 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.mapping.List;
-
-
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "doctor")
-public class Doctor {
+@Table(name = "aaa")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
-    private  String name;
-    private  String address;
-    private  String email;
-    private  String PhoneNo;
+    private long id;
+    private String first_name;
+    private  String last_name ;
+    private String age;
+    private  String phone_No;
+    private String email;
     private  String password;
-
-//    @ManyToOne
-//    private  Role role;
+   private String username;
+    private  String address;
+    private  String status ;
+    private String role_name;
 }

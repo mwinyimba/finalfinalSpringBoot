@@ -1,22 +1,20 @@
 package clinic.projectclinic.models;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
-import java.util.Set;
-
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "role")
-public class Role {
+@Table(name = "test")
+public class Test {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
     private String name;
+    private String emergence;
 
 }
