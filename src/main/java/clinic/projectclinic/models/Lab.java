@@ -6,14 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "test")
-public class Test {
+@Entity
+@Table(name = "lab")
+public class Lab {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String emergence;
-
+    @Column(name="id")
+    private Long id ;
+    private String patient_name;
+    private  String amount_blood;
+    private  String HIV ;
+    private  String pressure ;
+    private  String weight;
 }
