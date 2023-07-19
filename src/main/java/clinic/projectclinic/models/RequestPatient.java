@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RequestPatient {
     private Long patientId;
-    private Long labId;
+    private Long labTech;
     private String pressure;
     private  String hiv;
     private String weight;

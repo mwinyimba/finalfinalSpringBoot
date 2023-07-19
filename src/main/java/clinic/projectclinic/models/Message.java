@@ -19,4 +19,7 @@ public class Message {
     private  String Userto;
     private  String message;
     private  String status; // read or not read
+
+    @ManyToOne
+    private User mes;
 }

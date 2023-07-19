@@ -24,23 +24,18 @@ public class LabService {
 
 
     public Lab insertLab(RequestPatient request) {
-        Optional<User> p = userRepository.findById(request.getPatientId());
-        Optional<User> measured = userService.findById(request.getLabId());
-
-        User userPatient = p.get();
-
-        User userMeas = measured.get();
-
+        User p = userRepository.findUserById(request.getPatientId());
+        User measured = userRepository.findUserById(request.getLabTech());
 
 
         Lab l = new Lab();
-        l.setPatients(userPatient);
+        l.setPatients(p);
         l.setPressure(request.getPressure());
-        l.setLabTech(userMeas);
+        l.setLabTech(measured);
         l.setHiv(request.getHiv());
         l.setWeight(request.getWeight());
         l.setAmount_blood(request.getAmount_blood());
-        labRepository.save(l);
+
         return labRepository.save(l);
     }
     public List<Lab> getAll() {

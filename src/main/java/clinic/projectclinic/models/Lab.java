@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,9 +24,12 @@ public class Lab {
     private  String weight;
     private String status;//kapimwa
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User patients;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User labTech;
+
+    @OneToMany(mappedBy = "measured")
+    private List<Treatment> treatments ;
 }

@@ -2,6 +2,9 @@ package clinic.projectclinic.repositories;
 
 import clinic.projectclinic.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepository extends JpaRepository<User , Long> {
+    @Query("select s from User s where id = ?1")
+    User findUserById(Long id);
 }

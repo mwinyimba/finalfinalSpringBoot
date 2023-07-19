@@ -1,9 +1,6 @@
 package clinic.projectclinic.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +20,6 @@ public class Treatment {
     private Locale ReturnDate;
     private String status; //hali bado
 
-//    @OneToMany
-//    private Lab measured;
+    @ManyToOne
+    private Lab labInfo;
 }

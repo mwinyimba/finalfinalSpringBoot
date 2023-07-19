@@ -24,7 +24,7 @@ public class User {
     private String email;
     private  String password;
     private  String address;
-    private  String statusPatient_hajapimwa ;
+    private  String statusPatient;
     private String role_name;
 
 
@@ -33,4 +33,6 @@ public class User {
 
     @OneToMany(mappedBy ="patients")
     private List<Lab> patients;
+    @OneToMany (mappedBy = "mes")
+    private List<Message>  messages;
 }
