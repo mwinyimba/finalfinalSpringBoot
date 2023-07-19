@@ -15,9 +15,16 @@ public class Lab {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id ;
-    private String patient_name;
+
     private  String amount_blood;
-    private  String HIV ;
+    private  String hiv ;
     private  String pressure ;
     private  String weight;
+    private String status;//kapimwa
+
+    @ManyToOne
+    private User patients;
+
+    @ManyToOne
+    private User labTech;
 }

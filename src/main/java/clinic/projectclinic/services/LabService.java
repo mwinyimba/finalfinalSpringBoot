@@ -1,7 +1,10 @@
 package clinic.projectclinic.services;
 
 import clinic.projectclinic.models.Lab;
+import clinic.projectclinic.models.RequestPatient;
+import clinic.projectclinic.models.User;
 import clinic.projectclinic.repositories.LabRepository;
+import clinic.projectclinic.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +16,33 @@ public class LabService {
     @Autowired
     private LabRepository labRepository ;
 
-    public Lab addlab(Lab lab) {
-        return labRepository.save(lab);
-    }
+    @Autowired
+    private UserService userService;
 
+    @Autowired
+    UserRepository userRepository;
+
+
+    public Lab insertLab(RequestPatient request) {
+        Optional<User> p = userRepository.findById(request.getPatientId());
+        Optional<User> measured = userService.findById(request.getLabId());
+
+        User userPatient = p.get();
+
+        User userMeas = measured.get();
+
+
+
+        Lab l = new Lab();
+        l.setPatients(userPatient);
+        l.setPressure(request.getPressure());
+        l.setLabTech(userMeas);
+        l.setHiv(request.getHiv());
+        l.setWeight(request.getWeight());
+        l.setAmount_blood(request.getAmount_blood());
+        labRepository.save(l);
+        return labRepository.save(l);
+    }
     public List<Lab> getAll() {
         return labRepository.findAll();
     }
@@ -28,4 +54,7 @@ public class LabService {
     public void deleteById(Long id) {
         labRepository.deleteById(id);
     }
+
+
+
 }

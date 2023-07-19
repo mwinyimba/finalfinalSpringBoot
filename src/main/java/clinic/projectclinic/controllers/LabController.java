@@ -2,6 +2,7 @@ package clinic.projectclinic.controllers;
 
 import clinic.projectclinic.models.Lab;
 import clinic.projectclinic.models.Patient;
+import clinic.projectclinic.models.RequestPatient;
 import clinic.projectclinic.services.LabService;
 import clinic.projectclinic.services.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class LabController {
     private LabService labService ;
 
     @PostMapping("/")
-    public Lab addlab(@RequestBody Lab lab){
-        return labService.addlab(lab);
+    public Lab insertLab(@RequestBody RequestPatient request ){
+        return labService.insertLab(request);
     }
     @GetMapping("/")
     public List<Lab> getAll(){
@@ -29,10 +30,10 @@ public class LabController {
     public Optional<Lab> getById(@PathVariable Long id){
         return labService.findById(id);
     }
-    @PutMapping("/{id}")
-    public  Lab updateLab(@RequestBody Lab lab , @PathVariable Long id){
-        return  labService.addlab(lab);
-    }
+//    @PutMapping("/{id}")
+//    public  Lab updateLab(@RequestBody Lab lab , @PathVariable Long id){
+//        return  labService.insertLab(request);
+//    }
     @DeleteMapping("/{id}")
     public void deleteLab(@PathVariable Long id){
         labService.deleteById(id);
