@@ -20,6 +20,7 @@ public class Treatment {
     private Locale ReturnDate;
     private String status; //hali bado
 
-    @ManyToOne
-    private Lab labInfo;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Lab labDetail;
+
 }

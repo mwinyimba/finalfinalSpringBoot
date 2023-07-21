@@ -1,5 +1,6 @@
 package clinic.projectclinic.controllers;
 
+import clinic.projectclinic.dto.RequestLab;
 import clinic.projectclinic.models.Patient;
 import clinic.projectclinic.models.Treatment;
 import clinic.projectclinic.services.TreatmentService;
@@ -17,8 +18,8 @@ public class TreatmentController {
     private TreatmentService treatmentService;
 
     @PostMapping("/")
-    public Treatment addTreatment(@RequestBody Treatment treatment){
-        return treatmentService.addTreatment(treatment);
+    public Treatment insertTreatment(@RequestBody RequestLab request){
+        return treatmentService.insertTreatment(request);
     }
     @GetMapping("/")
     public List<Treatment> getAll(){
@@ -29,8 +30,8 @@ public class TreatmentController {
         return treatmentService.findById(id);
     }
     @PutMapping("/{id}")
-    public  Treatment updateTreatment(@RequestBody Treatment treatment , @PathVariable Long id){
-        return  treatmentService.addTreatment(treatment);
+    public  Treatment updateTreatment(@RequestBody RequestLab request , @PathVariable Long id){
+        return  treatmentService.insertTreatment(request);
     }
 
 

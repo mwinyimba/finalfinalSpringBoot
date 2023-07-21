@@ -1,4 +1,4 @@
-package clinic.projectclinic.models;
+package clinic.projectclinic.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

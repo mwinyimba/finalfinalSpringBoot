@@ -28,11 +28,11 @@ public class User {
     private String role_name;
 
 
-    @OneToMany(mappedBy ="labTech")
-    private List<Lab> lab;
-
-    @OneToMany(mappedBy ="patients")
-    private List<Lab> patients;
-    @OneToMany (mappedBy = "mes")
-    private List<Message>  messages;
+//    @OneToMany(mappedBy ="labTech")
+//    private List<Lab> lab;
+//
+//    @OneToMany(mappedBy ="patients")
+//    private List<Lab> patients;
+//    @OneToMany (mappedBy = "mes")
+//    private List<Message>  messages;
 }

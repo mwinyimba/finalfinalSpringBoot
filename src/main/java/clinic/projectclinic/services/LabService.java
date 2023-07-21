@@ -1,7 +1,7 @@
 package clinic.projectclinic.services;
 
 import clinic.projectclinic.models.Lab;
-import clinic.projectclinic.models.RequestPatient;
+import clinic.projectclinic.dto.RequestPatient;
 import clinic.projectclinic.models.User;
 import clinic.projectclinic.repositories.LabRepository;
 import clinic.projectclinic.repositories.UserRepository;

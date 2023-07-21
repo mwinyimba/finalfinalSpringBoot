@@ -1,10 +1,8 @@
 package clinic.projectclinic.controllers;
 
 import clinic.projectclinic.models.Lab;
-import clinic.projectclinic.models.Patient;
-import clinic.projectclinic.models.RequestPatient;
+import clinic.projectclinic.dto.RequestPatient;
 import clinic.projectclinic.services.LabService;
-import clinic.projectclinic.services.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,10 +28,10 @@ public class LabController {
     public Optional<Lab> getById(@PathVariable Long id){
         return labService.findById(id);
     }
-//    @PutMapping("/{id}")
-//    public  Lab updateLab(@RequestBody Lab lab , @PathVariable Long id){
-//        return  labService.insertLab(request);
-//    }
+    @PutMapping("/{id}")
+    public  Lab updateLab(@RequestBody RequestPatient request , @PathVariable Long id){
+        return  labService.insertLab(request);
+    }
     @DeleteMapping("/{id}")
     public void deleteLab(@PathVariable Long id){
         labService.deleteById(id);

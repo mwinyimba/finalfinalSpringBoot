@@ -29,7 +29,7 @@ public class Lab {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private User labTech;
-
-    @OneToMany(mappedBy = "measured")
-    private List<Treatment> treatments ;
+//
+//    @OneToMany(mappedBy = "labDetail")
+//    private List<Treatment> treatments ;
 }
