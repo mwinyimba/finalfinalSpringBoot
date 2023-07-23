@@ -28,6 +28,11 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public List<User> getAllByStatus() {
+        String st ="hajapimwa";
+        return userRepository.findUserByStatusPatient(st);
+    }
+
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);
     }

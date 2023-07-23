@@ -47,6 +47,10 @@ public class UserController {
     public List<User> getAll(){
         return userService.getAll();
     }
+    @GetMapping("/status")
+    public List<User> getAllByStatus(){
+        return userService.getAllByStatus();
+    }
     @GetMapping("/{id}")
     public Optional<User> getById(@PathVariable Long id){
         return userService.findById(id);
