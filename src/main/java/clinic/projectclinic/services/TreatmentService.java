@@ -9,6 +9,8 @@ import clinic.projectclinic.repositories.TreatmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,12 +27,13 @@ public class TreatmentService {
     public Treatment insertTreatment(RequestLab request) {
         Lab tr = labRepository.findLabById(request.getLabId());
 
+        LocalDate localDate = LocalDate.now();
 
         Treatment t = new Treatment();
         t.setLabDetail(tr);
         t.setMedicals(request.getMedical());
-        t.setStatus(request.getStatus());
-        t.setTreatedDate(request.getTreatedDate());
+        t.setStatus("NotYet");
+        t.setTreatedDate(localDate);
         t.setReturnDate(request.getReturnDate());
       return treatmentRepository.save(t);
     }

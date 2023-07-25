@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Locale;
 
 @Data
@@ -12,7 +13,5 @@ import java.util.Locale;
 public class RequestLab {
     private Long labId;
     private String medical;
-    private Locale treatedDate;
-    private Locale returnDate;
-    private String status;
+    private LocalDate returnDate;
 }
