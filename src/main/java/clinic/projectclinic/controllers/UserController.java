@@ -43,10 +43,19 @@ public class UserController {
            return ResponseEntity.ok(ur);
        }
     }
+    @PostMapping("/manager")
+    public User insertUser(@RequestBody User user){
+        return userService.insertUser(user);
+    }
     @GetMapping("/")
     public List<User> getAll(){
         return userService.getAll();
     }
+    @GetMapping("/manager")
+        public List<User> getAllStaff(){
+        return userService.getAllStaff( );
+    }
+
     @GetMapping("/status")
     public List<User> getAllByStatus(){
         return userService.getAllByStatus();

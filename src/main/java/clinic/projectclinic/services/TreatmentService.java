@@ -6,6 +6,7 @@ import clinic.projectclinic.models.Treatment;
 import clinic.projectclinic.models.User;
 import clinic.projectclinic.repositories.LabRepository;
 import clinic.projectclinic.repositories.TreatmentRepository;
+import clinic.projectclinic.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,9 @@ public class TreatmentService {
     private TreatmentRepository treatmentRepository;
     @Autowired
     private LabService labService;
+
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
       LabRepository labRepository;
 
@@ -46,4 +50,13 @@ public class TreatmentService {
     }
 
 
+    public List<Treatment> findByIdPatient(Long id) {
+
+        User u = userRepository.findUserById(id);
+
+        return  treatmentRepository.findByPatientId(u);
+
+
+
+    }
 }

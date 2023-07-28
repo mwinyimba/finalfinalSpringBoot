@@ -29,6 +29,11 @@ public class TreatmentController {
     public Optional<Treatment> getById(@PathVariable Long id){
         return treatmentService.findById(id);
     }
+    @GetMapping("/patient/{id}")
+    public List<Treatment> getByIdPatient(@PathVariable Long id){
+        List<Treatment>  t = treatmentService.findByIdPatient(id);
+    return t;
+    }
     @PutMapping("/{id}")
     public  Treatment updateTreatment(@RequestBody RequestLab request , @PathVariable Long id){
         return  treatmentService.insertTreatment(request);

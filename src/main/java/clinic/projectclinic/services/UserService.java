@@ -40,4 +40,12 @@ public class UserService {
     public void deleteById(Long id) {
         userRepository.deleteById(id);
     }
+
+    public User insertUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public List<User> getAllStaff() {
+        return userRepository.findAll();
+    }
 }

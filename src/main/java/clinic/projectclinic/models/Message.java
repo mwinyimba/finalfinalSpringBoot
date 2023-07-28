@@ -15,11 +15,10 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private  Long userId;
-    private String userFrom;
-    private  String Userto;
+    private  String respSms;
     private  String message;
     private  String status; // read or not read
 
     @ManyToOne
-    private User mes;
+    private User from;
 }

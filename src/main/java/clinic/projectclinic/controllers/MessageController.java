@@ -1,5 +1,6 @@
 package clinic.projectclinic.controllers;
 
+import clinic.projectclinic.dto.RequestMessage;
 import clinic.projectclinic.models.Message;
 import clinic.projectclinic.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,11 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
     @PostMapping("/")
-    public Message insertMessage(@RequestBody Message message){
-        return  messageService.insertMessage(message);
+    public Message insertMessage(@RequestBody RequestMessage mes){
+        return  messageService.insertMessage(mes);
     }
+
+
     @GetMapping("/")
     public List<Message> getAll(@RequestBody Message message){
         return messageService.getAll(message);
