@@ -3,8 +3,10 @@ package clinic.projectclinic.services;
 import clinic.projectclinic.dto.RequestMessage;
 import clinic.projectclinic.models.Lab;
 import clinic.projectclinic.models.Message;
+import clinic.projectclinic.models.User;
 import clinic.projectclinic.repositories.LabRepository;
 import clinic.projectclinic.repositories.MessageRepository;
+import clinic.projectclinic.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +18,18 @@ public class MessageService {
     @Autowired
     private MessageRepository messageRepository;
     @Autowired
+    private UserRepository userRepository;
+    @Autowired
     private LabRepository labRepository;
     public Message insertMessage(RequestMessage mes) {
-        Lab l = labRepository.findLabById(mes.getPatientId());
+        User l = userRepository.findUserById(mes.getPatientId());
 
         Message m = new Message();
         m.setMessage(mes.getSms());
         m.setRespSms(mes.getRespSms());
-        m.setStatus(mes.getStatus());
-//        m.setFrom();
+        m.setStatusPnotRead("Waiting");
+        m.setStatusDread("NotRead");
+        m.setFrom(l);
         return messageRepository.save(m);
     }
 

@@ -21,6 +21,7 @@ public class User {
 
     private String age;
     private  String phone_No;
+    private String type_sickle;
     private String email;
     private  String password;
     private  String address;

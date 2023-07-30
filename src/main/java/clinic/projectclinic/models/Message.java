@@ -17,7 +17,8 @@ public class Message {
     private  Long userId;
     private  String respSms;
     private  String message;
-    private  String status; // read or not read
+    private  String statusPnotRead;
+    private String statusDread;// read or not read
 
     @ManyToOne
     private User from;
