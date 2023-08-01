@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RequestMessage {
     private long patientId;
-    private String sms;
+    private String message;
     private String respSms;
     private  String status;
 }

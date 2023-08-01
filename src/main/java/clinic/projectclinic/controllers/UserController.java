@@ -2,12 +2,9 @@ package clinic.projectclinic.controllers;
 
 import clinic.projectclinic.dto.UserRequest;
 import clinic.projectclinic.dto.UserResp;
-import clinic.projectclinic.models.Patient;
 import clinic.projectclinic.models.User;
-import clinic.projectclinic.services.PatientService;
 import clinic.projectclinic.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

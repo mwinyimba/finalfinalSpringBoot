@@ -18,7 +18,6 @@ public class User {
     @Column(name = "id")
     private long id;
     private String full_name;
-
     private String age;
     private  String phone_No;
     private String type_sickle;

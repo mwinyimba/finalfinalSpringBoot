@@ -36,6 +36,7 @@ public class LabService {
         l.setWeight(request.getWeight());
         l.setAmount_blood(request.getAmount_blood());
 
+
         return labRepository.save(l);
     }
     public List<Lab> getAll() {

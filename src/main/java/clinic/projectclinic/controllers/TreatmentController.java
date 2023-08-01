@@ -1,7 +1,6 @@
 package clinic.projectclinic.controllers;
 
 import clinic.projectclinic.dto.RequestLab;
-import clinic.projectclinic.models.Patient;
 import clinic.projectclinic.models.Treatment;
 import clinic.projectclinic.services.TreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;

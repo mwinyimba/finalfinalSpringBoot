@@ -9,8 +9,10 @@ public interface MessageRepository extends JpaRepository<Message , Long> {
      @Query("select s from User s where id = ?1")
      Lab findLabById(Long id);
 
-     @Query("select s from User s where id = ?1")
-     Message findMessageById(Long id);
+
+
+
+
 
 
 }

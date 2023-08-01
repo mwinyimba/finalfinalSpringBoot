@@ -25,7 +25,7 @@ public class MessageService {
         User l = userRepository.findUserById(mes.getPatientId());
 
         Message m = new Message();
-        m.setMessage(mes.getSms());
+        m.setMessage(mes.getMessage());
         m.setRespSms(mes.getRespSms());
         m.setStatusPnotRead("Waiting");
         m.setStatusDread("NotRead");
