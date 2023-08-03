@@ -21,5 +21,5 @@ public class Message {
     private String statusDread;// read or not read
 
     @ManyToOne
-    private User from;
+    private User smsFrom;
 }

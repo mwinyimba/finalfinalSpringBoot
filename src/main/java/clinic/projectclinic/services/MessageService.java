@@ -26,15 +26,28 @@ public class MessageService {
 
         Message m = new Message();
         m.setMessage(mes.getMessage());
-        m.setRespSms(mes.getRespSms());
+        m.setRespSms(("not read"));
         m.setStatusPnotRead("Waiting");
         m.setStatusDread("NotRead");
-        m.setFrom(l);
+        m.setSmsFrom(l);
         return messageRepository.save(m);
     }
 
+
+    public Message update(RequestMessage mes) {
+        Message m = messageRepository.findMessageById(mes.getPatientId());
+        m.setRespSms(mes.getRespSms());
+        m.setStatusPnotRead("Read");
+        m.setStatusDread("Read");
+        return messageRepository.save(m);
+    }
     public List<Message> getAll(Message message) {
         return messageRepository.findAll();
+    }
+
+    public List<Message> getAllById(Long id) {
+        User l = userRepository.findUserById(id);
+        return messageRepository.findByMessageByPatientId(l);
     }
 
     public Optional<Message> getById(Long id) {
